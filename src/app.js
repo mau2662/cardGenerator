@@ -22,11 +22,12 @@ window.onload = function() {
     "A"
   ];
   let arraySimbolos = ["&spades;", "&#x2665;", "&#x2663;", "&#x2666;"];
+  console.log(random(arraySimbolos));
+
+  let numeroRandom = random(arrayNumeros);
+  let simboloRandom = random(arraySimbolos);
 };
 
-function random(arrayNumeros) {
-  for (let i = 0; i < arrayNumeros.length; i++) {
-    arrayNumeros[Math.floor(Math.random() * arrayNumeros.length)];
-  }
+function random(array) {
+  return array[Math.floor(Math.random() * (array.length - 1))];
 }
-console.log(random);
