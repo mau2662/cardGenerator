@@ -26,8 +26,23 @@ window.onload = function() {
 
   let numeroRandom = random(arrayNumeros);
   let simboloRandom = random(arraySimbolos);
+  let topSuit = document.querySelector(".top-suit");
+  let number = document.querySelector(".number");
+  let bottomSuit = document.querySelector(".bottom-suit");
+
+  topSuit.innerHTML = simboloRandom;
+  number.innerHTML = numeroRandom;
+  bottomSuit.innerHTML = simboloRandom;
+
+  if (simboloRandom === "&#x2665;" || simboloRandom === "&#x2666;") {
+    topSuit.classList.add("red");
+    bottomSuit.classList.add("red");
+  } else {
+    topSuit.classList.add("black");
+    bottomSuit.classList.add("black");
+  }
 };
 
 function random(array) {
-  return array[Math.floor(Math.random() * (array.length - 1))];
+  return array[Math.floor(Math.random() * array.length)];
 }
